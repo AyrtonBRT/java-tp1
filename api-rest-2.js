@@ -1,5 +1,5 @@
 // Realizamos la solicitud al servidor para obtener el JSON
-fetch('https://apis.datos.gob.ar/georef/api/direcciones?direccion=Lucilo%20B.%20L%C3%B3pez%201289&departamento=Concepci%C3%B3n%20del%20Uruguay&provincia=Entre%20R%C3%ADos')
+fetch('https://apis.datos.gob.ar/georef/api/direcciones?direccion=Sarmiento%201247&departamento=Concepci%C3%B3n%20del%20Uruguay&provincia=Entre%20R%C3%ADos')
     .then(response => response.json()) // Convertimos la respuesta a JSON
     .then(data => {
         // Obtenemos los valores del JSON necesarios
@@ -9,14 +9,14 @@ fetch('https://apis.datos.gob.ar/georef/api/direcciones?direccion=Lucilo%20B.%20
         const provincia = data.parametros.provincia;
         
         // Creamos el mensaje a mostrar en pantalla
-        const mensaje = `<h2>Dirección 1:</h2> ${calles} ${valor}, ${departamento}, ${provincia}.`;
+        const mensaje = `<h2>Dirección 2:</h2> ${calles} ${valor}, ${departamento}, ${provincia}.`;
 
         // Mostramos el mensaje en el elemento con id "results"
-        document.getElementById('results').innerHTML = mensaje;
+        document.getElementById('results2').innerHTML = mensaje;
     })
-
+    
     .catch(error => {
         console.error('Error:', error);
         // En caso de error, muestra un mensaje de error en el elemento con id "results"
-        document.getElementById('results').innerHTML = '<h2>Dirección 1:</h2> Se produjo un error al obtener los datos.';
+        document.getElementById('results2').innerHTML = '<h2>Dirección 2:</h2> Se produjo un error al obtener los datos.';
     });
